@@ -1,0 +1,11 @@
+{% extends "main/base_layout.html" %}
+{% block title %}{{ form.instance.id|yesno:"Edit Book,Add Book" }}{% endblock %}
+{% block main-content %}
+<h2>{{ form.instance.id|yesno:"Edit Book,Add Book" }}</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+<a href="{% url 'bookapp:book-list' %}">Back to list</a>
+{% endblock %}

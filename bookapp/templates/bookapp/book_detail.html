@@ -1,0 +1,11 @@
+{% extends "main/base_layout.html" %}
+{% block title %}Book Detail{% endblock %}
+{% block main-content %}
+<h2>{{ book.title }}</h2>
+<p>{{ book.desc }}</p>
+<p>Rating: {{ book.rate }} / Views: {{ book.views }}</p>
+
+<a href="{% url 'bookapp:book-edit' book.id %}">Edit</a> |
+<a href="{% url 'bookapp:book-delete' book.id %}">Delete</a> |
+<a href="{% url 'bookapp:book-list' %}">Back to list</a>
+{% endblock %}

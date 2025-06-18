@@ -1,0 +1,42 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environment
+venv/
+env/
+*.env
+*.venv/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor/IDE settings
+.vscode/
+.idea/
+
+# Database
+*.sqlite3
+*.db
+
+# PostgreSQL local dev settings (if any)
+*.psql
+
+# Django secrets
+*.env
+.env.*
+settings_local.py
+
+# Migrations (optional if you want to regenerate)
+**/migrations/*.py
+!**/migrations/__init__.py
+
+# Static/media files (optional if you're collecting separately)
+staticfiles/
+media/
+
+# Node/npm related
+node_modules/
+package-lock.json
