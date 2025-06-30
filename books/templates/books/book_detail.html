@@ -1,0 +1,15 @@
+{% extends 'books/base.html' %}
+{% block content %}
+<h3>{{ book.title }}</h3>
+<p><strong>Description:</strong> {{ book.description }}</p>
+<p><strong>Rate:</strong> {{ book.rate }}</p>
+<p><strong>Views:</strong> {{ book.views }}</p>
+<p><strong>Author:</strong> {{ book.user.username }}</p>
+<p><strong>Categories:</strong>
+    {% for cat in book.categories.all %}
+        {{ cat.name }}{% if not forloop.last %}, {% endif %}
+    {% endfor %}
+</p>
+<p><strong>ISBN:</strong> {{ book.isbn.isbn_number }}</p>
+<a href="{% url 'book_list' %}" class="btn btn-secondary">Back</a>
+{% endblock %}

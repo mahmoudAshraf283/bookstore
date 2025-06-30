@@ -1,0 +1,30 @@
+{% extends 'books/base.html' %}
+{% block content %}
+<a href="{% url 'book_create' %}" class="btn btn-primary mb-3">Add New Book</a>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for book in books %}
+    <tr>
+      <td>{{ book.title }}</td>
+      <td>{{ book.description|truncatewords:10 }}</td>
+      <td>
+        <a href="{% url 'book_detail' book.id %}" class="btn btn-info btn-sm">Read</a>
+        <a href="{% url 'book_update' book.id %}" class="btn btn-warning btn-sm">Edit</a>
+        <a href="{% url 'book_delete' book.id %}"
+           onclick="return confirm('Are you sure you want to delete this book?');"
+           class="btn btn-danger btn-sm">Delete</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
+

@@ -1,0 +1,15 @@
+# Django
+*.pyc
+__pycache__/
+db.sqlite3
+/media/
+/staticfiles/
+
+# Migrations (except __init__)
+**/migrations/*.py
+!**/migrations/__init__.py
+
+# VS Code or JetBrains
+.vscode/
+.idea/
+.env
